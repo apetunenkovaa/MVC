@@ -12,22 +12,22 @@ namespace MVC
     {
         public static string firstOperand;
         public static string secondOperand;
-        public static List<string> dataListDisplay = new List<string>() { "Сложение", "Вычитание", "Умножение", "Деление" }; // Список для выбора из comboBox
-        public static List<string> dataListValue = new List<string>() { "+", "-", "*", "/" }; // Список для вывода в textBox
+        public static List<string> dataListDisplay = new List<string>() { "Сложение", "Вычитание", "Умножение", "Деление" }; 
+        public static List<string> dataListValue = new List<string>() { "+", "-", "*", "/" }; 
 
         
         public static TextBlock tbSelectOperation;
         public static TextBox tbResult;
 
-        // блок с бизнес-логикой
-        public static int ArithmeticOperation  // свойтсво для отображения знака арифметической операции
+        
+        public static int ArithmeticOperation 
         {
             set
             {
                 tbSelectOperation.Text = dataListValue[value];
             }
         }
-        public static int CalculationResult // свойтсво для отображения результата
+        public static int CalculationResult 
         {
             set
             {
