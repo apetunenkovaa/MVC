@@ -23,6 +23,22 @@ namespace MVC
         public MainWindow()
         {
             InitializeComponent();
+            Models.tbResult = tbResult;
+            Models.tbSelectOperation = tbSelectOperation;
+            cbSelectOperation.ItemsSource = Models.dataListDisplay;
+            cbSelectOperation.SelectedIndex = 0;
+        }
+
+        private void SelectOperation_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Models.ArithmeticOperation = cbSelectOperation.SelectedIndex;
+        }
+
+        private void Calcul_Click(object sender, RoutedEventArgs e)
+        {
+            Models.firstOperand = tbFirstOperand.Text;
+            Models.secondOperand = tbSecondOperand.Text;
+            Models.CalculationResult = cbSelectOperation.SelectedIndex;
         }
     }
 }

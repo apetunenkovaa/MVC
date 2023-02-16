@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MVC" Height="250" Width="350">
     <Grid>
-        
+        <StackPanel>
+            <TextBlock Text="Выберите арифметическую операцию"/>
+            <ComboBox Name="cbSelectOperation" SelectionChanged="SelectOperation_SelectionChanged"/>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Name="tbFirstOperand" />
+                <TextBlock Name="tbSelectOperation" HorizontalAlignment="Center" Grid.Column="1"/>
+                <TextBox Grid.Column="2" Name="tbSecondOperand" />
+            </Grid>
+            <Button Name="Calcul" Content="Вычислить" Click="Calcul_Click"/>
+            <GroupBox Header="Результат:">
+                <TextBox Name="tbResult" IsEnabled="False"/>
+            </GroupBox>
+        </StackPanel>
     </Grid>
-</Window>
+</Window>   
